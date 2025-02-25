@@ -11,7 +11,11 @@
     --button-hover: #2980b9;
     --button-active: #2c3e50;
     --content-bg: #f8f9fa;
-}       
+    --link-color: #614d4b;
+    --link-hover: #005eeb;
+    --footer-bg: #2c3e50;
+    --footer-text: #ecf0f1;
+}
 
 body {
     font-family: 'Poppins', sans-serif;
@@ -21,6 +25,22 @@ body {
     padding: 0;
     transition: background-color 0.3s, color 0.3s;
     line-height: 1.6;
+}
+
+body.dark-mode {
+    --background-color: #2c3e50;
+    --text-color: #ecf0f1;
+    --box-background: rgba(52, 73, 94, 0.9);
+    --title-color: #ecf0f1;
+    --subtitle-color: #bdc3c7;
+    --button-bg: #2980b9;
+    --button-hover: #3498db;
+    --button-active: #1abc9c;
+    --content-bg: #34495e;
+    --link-color: #f7f4d2;
+    --link-hover: #7ee845;
+    --footer-bg: #1a2533;
+    --footer-text: #ecf0f1;
 }
 
 .box {
@@ -56,6 +76,196 @@ body {
     margin: 0 auto;
 }
 
+/* Estilo para los botones collapsible */
+.collapsible {
+    background-color: var(--button-bg);
+    color: #fff;
+    cursor: pointer;
+    padding: 20px 25px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 1.1rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.collapsible:hover {
+    background-color: var(--button-hover);
+    transform: translateY(-2px);
+}
+
+.collapsible.active {
+    background-color: var(--button-active);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+/* Estilo para el contenido */
+.content {
+    background-color: var(--content-bg);
+    max-height: 0;
+    opacity: 0;
+    transition: all 0.5s ease-out;
+    border-radius: 0 0 12px 12px;
+    padding: 0 25px;
+    overflow: hidden;
+}
+
+.collapsible.active + .content {
+    max-height: 100%;
+    opacity: 1;
+    padding: 20px 25px;
+    margin-bottom: 15px;
+}
+
+.content a {
+    display: block;
+    color: var(--link-color);
+    padding: 12px 0;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    border-radius: 8px;
+}
+
+.content a:hover {
+    background-color: var(--content-bg);
+    transform: translateX(10px);
+    padding-left: 10px;
+    color: var(--link-hover);
+}
+
+/* Estilos para el footer alternativo */
+.footer-alt {
+    background-color: var(--footer-bg);
+    color: var(--footer-text);
+    padding: 40px 20px 20px;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: 50px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 300px;
+    margin-bottom: 20px;
+}
+
+.footer-section h3 {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+    color: #3498db;
+}
+
+.donation-options {
+    display: flex;
+    gap: 15px;
+}
+
+.donation-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 15px;
+    border-radius: 25px;
+    text-decoration: none;
+    color: #fff;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.donation-link i {
+    margin-right: 8px;
+    font-size: 1.1rem;
+}
+
+.donation-link.local {
+    background-color: #e74c3c;
+}
+
+.donation-link.local:hover {
+    background-color: #c0392b;
+}
+
+.donation-link.paypal {
+    background-color: #003087;
+}
+
+.donation-link.paypal:hover {
+    background-color: #001f6b;
+}
+
+.footer-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    margin-top: 20px;
+    border-top: 1px solid #34495e;
+    font-size: 0.85rem;
+    color: #bdc3c7;
+}
+
+/* Estilos para el botón de cambio de tema */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: var(--button-bg);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.theme-toggle:hover {
+    background-color: var(--button-hover);
+    transform: scale(1.1);
+}
+
+.theme-toggle i {
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+.theme-toggle .fa-sun {
+    display: none;
+}
+
+body.dark-mode .theme-toggle .fa-sun {
+    display: inline-block;
+}
+
+body.dark-mode .theme-toggle .fa-moon {
+    display: none;
+}
+
 @media (max-width: 768px) {
     body {
         margin: 5%;
@@ -72,5 +282,36 @@ body {
 
     .title p {
         font-size: 1.1rem;
+    }
+
+    .collapsible {
+        font-size: 1rem;
+        padding: 15px 20px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .footer-section {
+        width: 100%;
+    }
+
+    .donation-options {
+        flex-direction: column;
+    }
+
+    .donation-link {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .theme-toggle {
+        top: 10px;
+        right: 10px;
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
     }
 }
