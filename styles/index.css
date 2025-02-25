@@ -374,7 +374,7 @@ nav ul li a:hover {
     grid-template-columns: repeat(4, 240px);
     gap: 3%;
     justify-content: center;
-    background-color: #ecf0f100;
+    background-color: #ecf0f102;
 }
 
 .card {
