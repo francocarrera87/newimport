@@ -1,5 +1,3 @@
-
-  
 /* ===================================================
    Reset Global y Configuración Base
 =================================================== */
@@ -13,7 +11,24 @@
 
 /* Importación de fuentes */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+
+/* ===================================================
+   Tipografías generales
+   - Encabezados (h1, h2, h3, h4, etc.): Montserrat
+   - Párrafos (p): Poppins
+=================================================== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700; /* Ajusta si deseas un grosor distinto */
+  line-height: 1.2;
+}
+
+p {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+}
 
 /* ===================================================
    Body
@@ -23,8 +38,7 @@ body {
     background-color: #ecf0f1;
     color: #2c3e50;
     background: #b2627a;
-background: linear-gradient(0deg, rgba(178,98,122,1) 4%, #ecf0f1 10%);
-
+    background: linear-gradient(0deg, rgba(178,98,122,1) 4%, #ecf0f1 10%);
 }
 
 /* ===================================================
@@ -33,11 +47,10 @@ background: linear-gradient(0deg, rgba(178,98,122,1) 4%, #ecf0f1 10%);
 header {
     background-color: #b2627a;
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Centrado en escritorio */
     align-items: center;
     padding: 15px 50px;
     color: white;
-    justify-content: center;
 }
 
 .logo {
@@ -58,10 +71,11 @@ nav ul {
 
 nav ul li a {
     text-decoration: none;
-    color: white;
+    color: red; /* O el valor hexadecimal deseado, por ejemplo, #ff0000 */
     font-weight: bold;
     transition: 0.3s;
-}
+  }
+  
 
 nav ul li a:hover {
     color: #ecf0f1;
@@ -94,8 +108,7 @@ nav ul li a:hover {
     color: #fff;
     text-align: center;
     min-height: 90vh; /* Ocupa el 100% de la altura de la ventana */
-  }
-  
+}
 
 .logo-container {
     margin-bottom: 20px;
@@ -110,16 +123,17 @@ nav ul li a:hover {
 
 /* Títulos y textos en la sección de introducción */
 .text-container h1 {
-    /* Usamos Montserrat para el título */
+    /* Usamos Montserrat para el título (reforzado) */
     font-family: 'Montserrat', sans-serif;
     font-size: 3rem;
-    font-weight: 900;
+    font-weight: 900; /* Ajusta según tu gusto (700, 900, etc.) */
     margin: 0;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
 .text-container h2 {
+    /* Montserrat ya está definido en h2 global, pero puedes reforzarlo aquí */
     font-family: 'Montserrat', sans-serif;
     font-size: 1.3rem;
     margin-top: 10px;
@@ -166,9 +180,9 @@ nav ul li a:hover {
     gap: 2rem;
     padding: 8%;
     background-color: #ecf0f1;
-    background: rgb(236,240,241);
-background: linear-gradient(0deg, rgba(236,240,241,1) 15%, rgba(178,98,122,0.18539915966386555) 49%, rgba(236,240,241,1) 80%);
-    
+    background: linear-gradient(0deg, rgba(236,240,241,1) 15%, rgba(178,98,122,0.18539915966386555) 49%, rgba(236,240,241,1) 80%);
+    min-height: 80vh;
+    padding-bottom: 30%;
 }
 
 .imagen-burbuja {
@@ -204,7 +218,6 @@ background: linear-gradient(0deg, rgba(236,240,241,1) 15%, rgba(178,98,122,0.185
     padding-left: 5%;
     padding-right: 5%;
     padding-bottom: 3%;
-    
 }
 
 .texto-envio h3 {
@@ -235,7 +248,6 @@ background: linear-gradient(0deg, rgba(236,240,241,1) 15%, rgba(178,98,122,0.185
     background-color: #3498db;
     color: #fff;
 }
-
 
 /* ===================================================
    CARRUSEL DE MARCAS
@@ -284,7 +296,6 @@ background: linear-gradient(0deg, rgba(236,240,241,1) 15%, rgba(178,98,122,0.185
     align-items: center;
     justify-content: center;
     position: relative;
-    
 }
 
 .carousel-inner {
@@ -355,7 +366,7 @@ background: linear-gradient(0deg, rgba(236,240,241,1) 15%, rgba(178,98,122,0.185
     margin: 5%;
     text-align: center;
     margin-bottom: 20%;
-    background-color: #ecf0f1;
+    background-color: #ecf0f100;
 }
 
 .cards-container {
@@ -363,7 +374,7 @@ background: linear-gradient(0deg, rgba(236,240,241,1) 15%, rgba(178,98,122,0.185
     grid-template-columns: repeat(4, 240px);
     gap: 3%;
     justify-content: center;
-    background-color: #ecf0f1;
+    background-color: #ecf0f100;
 }
 
 .card {
@@ -481,6 +492,8 @@ footer {
         display: flex;
     }
 }
+
+/* Ajustes para .informacionEnvios en pantallas pequeñas */
 @media (max-width: 768px) {
     .informacionEnvios {
       flex-direction: column;
@@ -506,10 +519,9 @@ footer {
       padding: 0 10%;
       text-align: center;
     }
-  }
+}
   
-  /* Opcional para pantallas muy pequeñas */
-  @media (max-width: 480px) {
+@media (max-width: 480px) {
     .informacionEnvios {
       padding: 3%;
     }
@@ -528,17 +540,10 @@ footer {
       font-size: 0.9rem;
       padding: 0 5%;
     }
-  }
-  
-
+}
 
 /* ================================
-   Importación de fuentes
-================================ */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-
-/* ================================
-   Estilos generales del Header y Navbar
+   Estilos del Header y Navbar (Fijo en móvil)
 ================================ */
 header {
   background-color: #b2627a;
@@ -550,7 +555,7 @@ header {
     align-items: center;
     justify-content: center; /* Centra los elementos en escritorio */
     width: 100%;
-  }
+}
 
 /* ================================
    Menú de navegación (Desktop)
@@ -564,14 +569,15 @@ header {
 
 .nav-item a {
   text-decoration: none;
-  color: #fff;
+  color: #862341;
   font-weight: bold;
   font-family: 'Montserrat', sans-serif;
-  transition: 0.3s;
+  transition: 0.4s;
+  font-size: 1.3rem;
 }
 
 .nav-item a:hover {
-  color: #ecf0f1;
+  color: #c0003c;
 }
 
 /* Ocultar el logo móvil en escritorio */
@@ -599,36 +605,34 @@ header {
    Estilos para móviles (max-width: 768px)
 ================================ */
 @media (max-width: 768px) {
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      padding: 15px 20px;
-      z-index: 1000;
-    }
-  
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 20px;
+    z-index: 1000;
+  }
+
   .navbar {
     position: relative;
     justify-content: space-between;
   }
-  
-  /* Mostrar el ícono hamburguesa en móvil */
+
   .hamburger {
     display: flex;
     flex-direction: column;
     cursor: pointer;
     z-index: 1000;
   }
-  
+
   .hamburger span {
     width: 25px;
     height: 3px;
     background: #fff;
     margin: 4px 0;
   }
-  
-  /* Mostrar el logo móvil centrado dentro del menú desplegable */
+
   .nav-logo-mobile {
     display: flex;
     justify-content: center;
@@ -636,13 +640,12 @@ header {
     width: 100%;
     margin-bottom: 15px;
   }
-  
+
   .nav-logo-mobile img {
     max-width: 250px;
     height: auto;
   }
-  
-  /* Estilo del menú desplegable */
+
   .nav-menu {
     display: none; /* Oculto por defecto */
     flex-direction: column;
@@ -658,8 +661,7 @@ header {
     max-height: 0;
     margin: 0;
   }
-  
-  /* Cuando se activa el menú (mediante JS) */
+
   .nav-menu.active {
     display: flex;
     opacity: 1;
@@ -671,7 +673,7 @@ header {
     border-radius: 0 0 100% 100%;
     animation: dropdownOpen 0.5s ease-out;
   }
-  
+
   .nav-item {
     margin: 10px 0;
   }
@@ -680,8 +682,6 @@ header {
 /* ================================
    Ejemplos de Animaciones
 ================================ */
-
-/* 1. Fade In */
 @keyframes fadeIn {
   from { opacity: 0; }
   to   { opacity: 1; }
@@ -690,7 +690,6 @@ header {
   animation: fadeIn 1s ease-in-out forwards;
 }
 
-/* 2. Slide In from Left */
 @keyframes slideIn {
   from { transform: translateX(-100%); }
   to   { transform: translateX(0); }
@@ -699,7 +698,6 @@ header {
   animation: slideIn 1s ease-out forwards;
 }
 
-/* 3. Rotate (giro continuo) */
 @keyframes rotateAnim {
   from { transform: rotate(0deg); }
   to   { transform: rotate(360deg); }
@@ -708,7 +706,6 @@ header {
   animation: rotateAnim 2s linear infinite;
 }
 
-/* 4. Pulse (efecto de latido) */
 @keyframes pulse {
   0%, 100% { transform: scale(1); }
   50%      { transform: scale(1.1); }
@@ -717,7 +714,6 @@ header {
   animation: pulse 1.5s ease-in-out infinite;
 }
 
-/* 5. Bounce (rebote) */
 @keyframes bounce {
   0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
   40% { transform: translateY(-30px); }
@@ -727,7 +723,6 @@ header {
   animation: bounce 1s ease infinite;
 }
 
-/* Animación para el dropdown del menú */
 @keyframes dropdownOpen {
   from {
     opacity: 0;
@@ -738,3 +733,48 @@ header {
     transform: translateY(0);
   }
 }
+
+
+/*====================titulos=========================*/
+.titulos {
+    text-align: center;
+    padding: 2rem 0;
+    background: linear-gradient(90deg, #c0003c, #e7688e); /* Degradado acorde a los colores usados */
+    margin-bottom: 2rem;
+  }
+  
+  .titulos h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  }
+  /* Media Query para tablets */
+@media (max-width: 768px) {
+    .titulos {
+      padding: 1.5rem 0;
+      margin-bottom: 1.5rem;
+    }
+    .titulos h2 {
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+    }
+  }
+  
+  /* Media Query para móviles pequeños */
+  @media (max-width: 480px) {
+    .titulos {
+      padding: 1rem 0;
+      margin-bottom: 1rem;
+    }
+    .titulos h2 {
+      font-size: 2rem;
+      letter-spacing: 1px;
+    }
+  }
+  
+/*=============================================*/
