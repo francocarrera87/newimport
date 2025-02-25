@@ -1,0 +1,76 @@
+/* Estilos generales para la página */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Montserrat:wght@400;600;700&display=swap');
+
+:root {
+    --background-color: #8298b9d1;
+    --text-color: #2c3e50;
+    --box-background: rgba(237, 236, 236, 0.881);
+    --title-color: #34495e;
+    --subtitle-color: #7f8c8d;
+    --button-bg: #3498db;
+    --button-hover: #2980b9;
+    --button-active: #2c3e50;
+    --content-bg: #f8f9fa;
+}       
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, var(--background-color) 0%, #c3cfe2 100%);
+    color: var(--text-color);
+    margin: 5% 10%;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+    line-height: 1.6;
+}
+
+.box {
+    background-color: var(--box-background);
+    border: none;
+    border-radius: 20px;
+    padding: 30px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para la sección de título */
+.title {
+    text-align: center;
+    padding: 30px 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.title h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    color: var(--title-color);
+    font-weight: 700;
+}
+
+.title p {
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: var(--subtitle-color);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    body {
+        margin: 5%;
+    }
+
+    .box {
+        width: 95%;
+        padding: 20px;
+    }
+
+    .title h1 {
+        font-size: 2.5rem;
+    }
+
+    .title p {
+        font-size: 1.1rem;
+    }
+}

@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WEIMPORT - Tu tienda de tecnología y gadgets</title>
+  <meta name="description" content="Weimport te ofrece lo último en tecnología, desde smartphones hasta consolas y más. Descubre productos de alta gama y recibe tus compras en la puerta de tu casa.">
+  <link rel="canonical" href="https://www.weimport.com">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="WEIMPORT - Tu tienda de tecnología y gadgets">
+  <meta property="og:description" content="Descubre lo último en tecnología con Weimport.">
+  <meta property="og:image" content="https://www.weimport.com/img/2.png">
+  <meta property="og:url" content="https://www.weimport.com">
+  <meta property="og:type" content="website">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  
+  <link rel="stylesheet" href="./styles/index.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="icon" href="./logo.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Holtwood+One+SC&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;900&display=swap">
+</head>
+<body>
+  <!-- Encabezado -->
+  <header>
+    <nav class="navbar">
+      <!-- Ícono hamburguesa -->
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <!-- Logo móvil (opcional, si prefieres que esté dentro de la lista, envuélvelo en <li>) -->
+      <ul class="nav-menu" id="nav-menu">
+        <li class="nav-logo-mobile">
+          <img src="./img/logos/weimportlogo.png" alt="Logo pequeño de Weimport">
+        </li>
+        <li class="nav-item"><a href="/inicio">Inicio</a></li>
+        <li class="nav-item"><a href="/productos">Productos</a></li>
+        <li class="nav-item"><a href="/contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  
+
+  <!-- Sección de introducción (hero) -->
+  <section class="section-intrologo">
+    <!-- Contenedor de la imagen -->
+    <div class="logo-container">
+      <img src="./img/2.png" alt="Logo de Weimport">
+    </div>
+    <!-- Contenedor de los textos -->
+    <div class="text-container">
+      <h1 class="logo-title">
+        <span class="color1">NEW</span><span class="color2">IMPORT</span>
+      </h1>
+      <h2>Encuentra la última tecnología aquí</h2>
+      <button class="btn-intrologo">Ver más</button>
+    </div>
+  </section>
+
+  <!-- Sección de información de envíos -->
+  <section class="informacionEnvios">
+    
+    <div class="texto-envio">
+      <h2>Nosotros nos encargamos de hacer llegar el producto a la puerta de tu casa</h2>
+      <h3>Seleccionas tu producto, contactamos al proveedor y el envío inicia su recorrido.</h3>
+       <!--<button class="btn-envios" >contactanos</button>-->
+    </div>
+    <div class="imagen-burbuja">
+      <img src="./img/logos/3.png" alt="Envío a domicilio">
+    </div>
+  </section>
+
+
+
+  <!-- Sección de presentación con carrusel -->
+  <section class="carousel-intro">
+    <div class="carousel-inner">
+      <!-- Slide 2: iPhone 16 -->
+      <div class="slide slide2">
+        <div class="slide-content">
+          <img src="./img/iphones16-removebg-preview.png" alt="iPhone 16" class="slide-img">
+          <div class="text">
+            <h1>iPhone 16</h1>
+            <p>Lo último en tecnología móvil con pantalla ProMotion y chip A18 Bionic.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Slide 1: PlayStation 5 -->
+      <div class="slide slide1 active">
+        <div class="slide-content">
+          <div class="text">
+            <h1>PlayStation 5</h1>
+            <p>Experimenta la nueva generación en videojuegos con gráficos 4K y tiempos de carga ultrarrápidos.</p>
+          </div>
+          <img src="./img/ps5remove.png" alt="PlayStation 5" class="slide-img">
+        </div>
+      </div>
+      <!-- Slide 3: Meta Quest 3 -->
+      <div class="slide slide3">
+        <div class="slide-content">
+          <img src="./img/metaqpng.jpg" alt="Meta Quest 3" class="slide-img">
+          <div class="text">
+            <h1>Meta Quest 3</h1>
+            <p>Sumérgete en la mejor experiencia de realidad virtual con gráficos mejorados.</p>
+          </div>
+        </div>
+      </div>
+      <!-- Slide 4: Drone DJI Mavic 3 PRO -->
+      <div class="slide slide4">
+        <div class="slide-content">
+          <img src="./img/mavic3pro-removebg-preview.png" alt="Drone DJI" class="slide-img">
+          <div class="text">
+            <h1>Drone DJI Mavic 3 PRO</h1>
+            <p>Explora el mundo desde las alturas con grabación en 4K y estabilización avanzada.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+    <!-- Carrusel de marcas -->
+    <section class="carousel">
+      <div class="carousel-container">
+        <img src="./img/logos/apple.svg" alt="Apple">
+        <img src="./img/logos/samsung.svg" alt="Samsung">
+        <img src="./img/logos/sony.svg" alt="PlayStation">
+        <img src="./img/logos/xbox.svg" alt="Xbox">
+        <img src="./img/logos/xiaomi.svg" alt="Xiaomi">
+        <!-- Duplicamos las imágenes para lograr el efecto continuo -->
+        <img src="./img/logos/vivo.svg" alt="Vivo">
+        <img src="./img/logos/dji.png" alt="DJI">
+        <img src="./img/logos/realme.svg" alt="Realme">
+        <img src="./img/logos/googleplixel.webp" alt="Google Pixel">
+        <img src="./img/logos/oppo.svg" alt="Oppo">
+        <img src="./img/logos/apple.svg" alt="Apple">
+        <img src="./img/logos/samsung.svg" alt="Samsung">
+        <img src="./img/logos/sony.svg" alt="PlayStation">
+        <img src="./img/logos/xbox.svg" alt="Xbox">
+        <img src="./img/logos/xiaomi.svg" alt="Xiaomi">
+        <!-- Duplicamos las imágenes -->
+        <img src="./img/logos/vivo.svg" alt="Vivo">
+        <img src="./img/logos/dji.png" alt="DJI">
+        <img src="./img/logos/realme.svg" alt="Realme">
+        <img src="./img/logos/googleplixel.webp" alt="Google Pixel">
+        <img src="./img/logos/oppo.svg" alt="Oppo">
+        <img src="./img/logos/apple.svg" alt="Apple">
+        <img src="./img/logos/samsung.svg" alt="Samsung">
+        <img src="./img/logos/sony.svg" alt="PlayStation">
+        <img src="./img/logos/xbox.svg" alt="Xbox">
+        <img src="./img/logos/xiaomi.svg" alt="Xiaomi">
+        <!-- Duplicamos las imágenes -->
+        <img src="./img/logos/vivo.svg" alt="Vivo">
+        <img src="./img/logos/dji.png" alt="DJI">
+        <img src="./img/logos/realme.svg" alt="Realme">
+        <img src="./img/logos/googleplixel.webp" alt="Google Pixel">
+        <img src="./img/logos/oppo.svg" alt="Oppo">
+      </div>
+    </section>
+
+  <!-- Sección de productos -->
+  <section class="productos">
+    <div class="cards-container">
+      <div class="card">
+        <img src="./img/macbook2.jpg" alt="MacBook">
+        <h3>MacBook</h3>
+        <p>Potencia y elegancia. Portátil premium para profesionales exigentes.</p>
+      </div>
+      <div class="card">
+        <img src="./img/nintendo.jpg" alt="Nintendo Switch">
+        <h3>Nintendo Switch</h3>
+        <p>Consola híbrida perfecta para diversión en casa y fuera.</p>
+      </div>
+      <div class="card">
+        <img src="./img/ipadpro.png" alt="iPad de última generación">
+        <h3>iPad de última generación</h3>
+        <p>Potencia y elegancia en cada detalle.</p>
+      </div>
+      <div class="card">
+        <img src="./img/xboxX.jpg" alt="Xbox Series X">
+        <h3>Xbox Series X</h3>
+        <p>Potencia imparable para la nueva generación.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pie de página -->
+  <footer>
+    <p>&copy; 2024 TechStore - Todos los derechos reservados</p>
+  </footer>
+  
+  <script>
+    // Carrusel automático
+    let index = 0;
+    function slideShow() {
+      const slides = document.querySelector(".carousel-inner");
+      index = (index + 1) % 4;
+      slides.style.transform = `translateX(${-index * 100}%)`;
+    }
+    // Cambia cada 5 segundos
+    setInterval(slideShow, 5000);
+    
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const hamburger = document.getElementById('hamburger');
+      const navMenu = document.getElementById('nav-menu');
+
+      hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+      });
+    });
+  </script>
+
+
+</body>
+</html>
