@@ -10,6 +10,25 @@
     <link rel="icon" href="./logo.ico" type="image/x-icon">
   </head>
   <body>
+    <header>
+      <nav class="navbar">
+        <!-- Ícono hamburguesa -->
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <!-- Logo móvil (opcional, si prefieres que esté dentro de la lista, envuélvelo en <li>) -->
+        <ul class="nav-menu" id="nav-menu">
+          <li class="nav-logo-mobile">
+            <img src="./img/logos/weimportlogo.png" alt="Logo pequeño de NEWIMPORT">
+          </li>
+          <li class="nav-item"><a href="./index.html">Inicio</a></li>
+          <li class="nav-item"><a href="./listaprecios.html">Productos</a></li>
+          <li class="nav-item"><a href="/contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
     <section class="box">   
       <section class="section-intrologo">
         <!-- Contenedor de la imagen -->
@@ -535,43 +554,14 @@
 
     <script src="./js/app.js"></script>
     <script>
-      const themeToggle = document.getElementById('themeToggle');
-      const body = document.body;
-      
-      themeToggle.addEventListener('click', () => {
-          body.classList.toggle('dark-mode');
-          updateThemeIcon();
-          saveThemePreference();
+      document.addEventListener('DOMContentLoaded', () => {
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('nav-menu');
+  
+        hamburger.addEventListener('click', () => {
+          navMenu.classList.toggle('active');
+        });
       });
-      
-      function updateThemeIcon() {
-          const sunIcon = themeToggle.querySelector('.fa-sun');
-          const moonIcon = themeToggle.querySelector('.fa-moon');
-          
-          if (body.classList.contains('dark-mode')) {
-              sunIcon.style.display = 'inline-block';
-              moonIcon.style.display = 'none';
-          } else {
-              sunIcon.style.display = 'none';
-              moonIcon.style.display = 'inline-block';
-          }
-      }
-      
-      function saveThemePreference() {
-          const isDarkMode = body.classList.contains('dark-mode');
-          localStorage.setItem('darkMode', isDarkMode);
-      }
-      
-      function loadThemePreference() {
-          const isDarkMode = localStorage.getItem('darkMode') === 'true';
-          if (isDarkMode) {
-              body.classList.add('dark-mode');
-          }
-          updateThemeIcon();
-      }
-      
-      // Cargar la preferencia de tema al iniciar la página
-      loadThemePreference();
-      </script>
+    </script>
   </body>
 </html>

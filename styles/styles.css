@@ -107,7 +107,7 @@ body {
 /* 🔹 BOTONES COLAPSABLES */
 /* ============================== */
 .collapsible {
-    background: linear-gradient(90deg, rgba(103, 106, 103, 0.491) 0%, rgba(124, 156, 163, 0.479) 100%);
+    background: linear-gradient(90deg, rgba(103, 106, 103, 0.491) 0%, rgba(163, 124, 143, 0.479) 100%);
     color: var(--white);
     cursor: pointer;
     padding: 20px 25px;
@@ -316,3 +316,151 @@ body {
   }
   
 /*=============================================*/
+/* ================================
+   Menú de navegación (Desktop)
+================================ */
+/* Menú de navegación (Desktop) */
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+    align-items: center;
+  }
+  
+  .nav-item a {
+    text-decoration: none;
+    color: #862341;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    transition: 0.4s;
+    font-size: 1.3rem;
+  }
+  
+  .nav-item a:hover {
+    color: #ffffff;
+  }
+  
+  /* Ocultar el logo móvil en escritorio */
+  .nav-logo-mobile {
+    display: none;
+  }
+  
+  /* Ícono Hamburguesa (Desktop): oculto en escritorio */
+  .hamburger {
+    display: none;
+  }
+  
+  .hamburger span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    
+    transition: 0.3s;
+  }
+  
+  /* Estilos para el header en escritorio */
+  header {
+    background-color: #b2627a;
+    
+  }
+  
+  .navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centra los elementos en escritorio */
+    width: 100%;
+  }
+  
+  /* ============================== */
+  /* MEDIA QUERY PARA PANTALLAS PEQUEÑAS (Móviles/Tablet) */
+  /* ============================== */
+  @media (max-width: 768px) {
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 15px 20px;
+      z-index: 1000;
+    }
+    
+    .navbar {
+      justify-content: space-between;
+      position: relative;
+    }
+    
+    /* Mostrar el ícono hamburguesa en móviles */
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      z-index: 1000;
+    }
+    
+    .hamburger span {
+      width: 25px;
+      height: 4px;
+      background: #fff;
+      margin: 3px 0;
+    }
+    
+    /* Mostrar logo móvil */
+    .nav-logo-mobile {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      margin-bottom: 15px;
+    }
+    
+    .nav-logo-mobile img {
+      max-width: 250px;
+      height: auto;
+    }
+    
+    /* Ocultar el menú principal por defecto en móviles y ajustarlo para ocupar toda la pantalla */
+    .nav-menu {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      position: absolute;
+      top: 45px; /* Ubicación debajo del header */
+      left: 0;
+      width: calc(100% + 40px); /* Se expande para compensar el padding del header */
+      margin-left: -20px;       /* Desplazamos a la izquierda para que quede alineado */
+      background-color: #b2627a;
+      transition: max-height 0.5s ease, opacity 0.5s ease;
+      overflow: hidden;
+      opacity: 0;
+      max-height: 0;
+    }
+    
+    /* Al activar el menú, se muestra con animación y ocupa todo el ancho */
+    .nav-menu.active {
+      display: flex;
+      opacity: 1;
+      min-height: 700px; /* Ajusta este valor según la cantidad de elementos */
+      background: linear-gradient(0deg, #ecf0f160 5%, rgba(178, 98, 122, 0.967) 60%);
+      margin: 0;
+      padding: 0;
+      border-radius: 0 0 30% 30%;
+      animation: dropdownOpen 0.5s ease-out;
+      left: 0;
+      width: calc(100% + 40px);
+      margin-left: -20px;
+    }
+  }
+  
+  /* Animación para desplegar el menú */
+  @keyframes dropdownOpen {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
