@@ -1,85 +1,114 @@
-/* Estilos generales para la página */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Montserrat:wght@400;600;700&display=swap');
+/* ============================== */
+/* 🔹 IMPORTACIÓN DE TIPOGRAFÍAS */
+/* ============================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Montserrat:wght@400;600;700;900&display=swap');
 
+/* ============================== */
+/* 🔹 VARIABLES DE COLOR Y ESTILO */
+/* ============================== */
 :root {
-    --background-color: #8298b9d1;
-    --text-color: #2c3e50;
-    --box-background: rgba(237, 236, 236, 0.881);
-    --title-color: #34495e;
-    --subtitle-color: #7f8c8d;
-    --button-bg: #3498db;
-    --button-hover: #2980b9;
-    --button-active: #2c3e50;
-    --content-bg: #f8f9fa;
-    --link-color: #614d4b;
-    --link-hover: #005eeb;
-    --footer-bg: #2c3e50;
-    --footer-text: #ecf0f1;
+    --primary-color: #6282b2;  /* Cambiado para coincidir con el fondo de la homepage */
+    --secondary-color: #626eb2b7; /* Se usa el tono claro de la homepage */
+    --text-color: #2c3e50;      /* Igual que en la homepage */
+    --accent-color: #6b839c;    /* Color principal para acentos (igual que .color1 en homepage) */
+    --light-accent: #a7e6f4;    /* Segundo color de acento (igual que .color2 en homepage) */
+    --background-light: #ecf0f1;
+    --white: #fff;
+    --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
+/* ============================== */
+/* 🔹 ESTILOS GENERALES */
+/* ============================== */
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, var(--background-color) 0%, #c3cfe2 100%);
+    /* Fondo adaptado para coincidir con la homepage */
+    background: #ecf0f1;
+    background: linear-gradient(0deg, rgba(178,98,122,1) 0%, rgba(236,240,241,1) 30%, rgba(236,240,241,1) 56%, rgba(186,117,138,1) 95%);
+   
     color: var(--text-color);
-    margin: 5% 10%;
+    margin: 0; /* Se eliminan márgenes para que el fondo se extienda en toda la pantalla */
     padding: 0;
     transition: background-color 0.3s, color 0.3s;
     line-height: 1.6;
 }
 
-body.dark-mode {
-    --background-color: #2c3e50;
-    --text-color: #ecf0f1;
-    --box-background: rgba(52, 73, 94, 0.9);
-    --title-color: #ecf0f1;
-    --subtitle-color: #bdc3c7;
-    --button-bg: #2980b9;
-    --button-hover: #3498db;
-    --button-active: #1abc9c;
-    --content-bg: #34495e;
-    --link-color: #f7f4d2;
-    --link-hover: #7ee845;
-    --footer-bg: #1a2533;
-    --footer-text: #ecf0f1;
-}
-
+/* ============================== */
+/* 🔹 CONTENEDOR PRINCIPAL */
+/* ============================== */
 .box {
-    background-color: var(--box-background);
-    border: none;
+    background-color: var(--white);
     border-radius: 20px;
     padding: 30px;
     width: 90%;
     max-width: 1200px;
     margin: 30px auto;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow);
 }
 
-/* Estilos para la sección de título */
+/* ============================== */
+/* 🔹 SECCIÓN DE INTRODUCCIÓN */
+/* ============================== */
+.section-intrologo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+    text-align: center;
+}
+
+.logo-container img {
+    width: 40%;
+    height: 40%;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: -35%;
+}
+
+.text-container h1 {
+    font-size: 3rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.text-container h1 .color1 {
+    color: var(--accent-color);
+}
+
+.text-container h1 .color2 {
+    color: var(--light-accent);
+}
+
+/* ============================== */
+/* 🔹 TITULOS GENERALES */
+/* ============================== */
 .title {
     text-align: center;
     padding: 30px 0;
-    font-family: 'Montserrat', sans-serif;
+    margin-top: 3%;
 }
 
 .title h1 {
     font-size: 3rem;
-    margin-bottom: 15px;
-    color: var(--title-color);
+    color: var(--text-color);
     font-weight: 700;
 }
 
 .title p {
     font-size: 1.3rem;
-    line-height: 1.8;
-    color: var(--subtitle-color);
+    color: var(--text-color);
     max-width: 800px;
     margin: 0 auto;
 }
 
-/* Estilo para los botones collapsible */
+/* ============================== */
+/* 🔹 BOTONES COLAPSABLES */
+/* ============================== */
 .collapsible {
-    background-color: var(--button-bg);
-    color: #fff;
+    background: linear-gradient(90deg, rgba(103, 106, 103, 0.491) 0%, rgba(124, 156, 163, 0.479) 100%);
+    color: var(--white);
     cursor: pointer;
     padding: 20px 25px;
     width: 100%;
@@ -89,26 +118,28 @@ body.dark-mode {
     font-size: 1.1rem;
     border-radius: 12px;
     transition: all 0.3s ease;
-    margin-bottom: 10px;
-    font-family: 'Montserrat', sans-serif;
     font-weight: 600;
-    box-shadow: 0 4px 6px rgba(50, 50, 93, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: var(--shadow);
+    margin-top: 2%;
 }
 
 .collapsible:hover {
-    background-color: var(--button-hover);
+    background-color: var(--light-accent);
     transform: translateY(-2px);
 }
 
 .collapsible.active {
-    background-color: var(--button-active);
+    background-color: var(--secondary-color);
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
 }
 
-/* Estilo para el contenido */
+/* ============================== */
+/* 🔹 CONTENIDO COLAPSABLE */
+/* ============================== */
 .content {
-    background-color: var(--content-bg);
+    background-color: var(--background-light);
     max-height: 0;
     opacity: 0;
     transition: all 0.5s ease-out;
@@ -126,31 +157,31 @@ body.dark-mode {
 
 .content a {
     display: block;
-    color: var(--link-color);
+    color: var(--accent-color);
     padding: 12px 0;
     text-decoration: none;
     transition: all 0.3s ease;
-    font-family: 'Poppins', sans-serif;
     font-size: 1rem;
-    border-radius: 8px;
 }
 
 .content a:hover {
-    background-color: var(--content-bg);
+    background-color: var(--light-accent);
     transform: translateX(10px);
     padding-left: 10px;
-    color: var(--link-hover);
+    color: var(--text-color);
 }
 
-/* Estilos para el footer alternativo */
+/* ============================== */
+/* 🔹 FOOTER (Opcional, si se utiliza) */
+/* ============================== */
 .footer-alt {
-    background-color: var(--footer-bg);
+    background-color: var(--primary-color);
     color: var(--footer-text);
     padding: 40px 20px 20px;
     font-family: 'Montserrat', sans-serif;
     margin-top: 50px;
     border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow);
 }
 
 .footer-content {
@@ -170,8 +201,7 @@ body.dark-mode {
 
 .footer-section h3 {
     font-size: 1.4rem;
-    margin-bottom: 15px;
-    color: #3498db;
+    color: var(--accent-color);
 }
 
 .donation-options {
@@ -185,22 +215,20 @@ body.dark-mode {
     padding: 10px 15px;
     border-radius: 25px;
     text-decoration: none;
-    color: #fff;
+    color: var(--white);
     font-size: 0.9rem;
-    transition: all 0.3s ease;
 }
 
 .donation-link i {
     margin-right: 8px;
-    font-size: 1.1rem;
 }
 
 .donation-link.local {
-    background-color: #e74c3c;
+    background-color: var(--accent-color);
 }
 
 .donation-link.local:hover {
-    background-color: #c0392b;
+    background-color: var(--light-accent);
 }
 
 .donation-link.paypal {
@@ -211,64 +239,14 @@ body.dark-mode {
     background-color: #001f6b;
 }
 
-.footer-text {
-    font-size: 0.95rem;
-    line-height: 1.6;
-}
-
-.footer-bottom {
-    text-align: center;
-    padding-top: 20px;
-    margin-top: 20px;
-    border-top: 1px solid #34495e;
-    font-size: 0.85rem;
-    color: #bdc3c7;
-}
-
-/* Estilos para el botón de cambio de tema */
-.theme-toggle {
-    position: fixed;
-    top: 20px;
-    right: 20px;
-    background-color: var(--button-bg);
-    color: #fff;
-    border: none;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    font-size: 1.5rem;
-    cursor: pointer;
-    transition: background-color 0.3s, transform 0.3s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-}
-
-.theme-toggle:hover {
-    background-color: var(--button-hover);
-    transform: scale(1.1);
-}
-
-.theme-toggle i {
-    transition: opacity 0.3s, transform 0.3s;
-}
-
-.theme-toggle .fa-sun {
-    display: none;
-}
-
-body.dark-mode .theme-toggle .fa-sun {
-    display: inline-block;
-}
-
-body.dark-mode .theme-toggle .fa-moon {
-    display: none;
-}
-
+/* ============================== */
+/* 🔹 RESPONSIVE DESIGN */
+/* ============================== */
 @media (max-width: 768px) {
     body {
-        margin: 5%;
+        margin: 0;
+        margin-left: 2%;
+        margin-right: 4%;
     }
 
     .box {
@@ -291,27 +269,50 @@ body.dark-mode .theme-toggle .fa-moon {
 
     .footer-content {
         flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .footer-section {
-        width: 100%;
-    }
-
-    .donation-options {
-        flex-direction: column;
-    }
-
-    .donation-link {
-        width: 100%;
-        justify-content: center;
-    }
-
-    .theme-toggle {
-        top: 10px;
-        right: 10px;
-        width: 40px;
-        height: 40px;
-        font-size: 1.2rem;
     }
 }
+/*====================titulos=========================*/
+.titulos {
+    text-align: center;
+    padding: 2rem 0;
+    background: linear-gradient(90deg, #c0003c, #e7688e); /* Degradado acorde a los colores usados */
+    width: 100%;
+    border-radius: 20px;
+    
+  }
+  
+  .titulos h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem;
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  }
+  /* Media Query para tablets */
+@media (max-width: 768px) {
+    .titulos {
+      padding: 1.5rem 0;
+      margin-bottom: 1.5rem;
+    }
+    .titulos h2 {
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+    }
+  }
+  
+  /* Media Query para móviles pequeños */
+  @media (max-width: 480px) {
+    .titulos {
+      padding: 1rem 0;
+      margin-bottom: 1rem;
+    }
+    .titulos h2 {
+      font-size: 2rem;
+      letter-spacing: 1px;
+    }
+  }
+  
+/*=============================================*/
