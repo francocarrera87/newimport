@@ -367,9 +367,11 @@ nav ul li a:hover {
     text-align: center;
     margin-bottom: 20%;
     background-color: #ecf0f100;
+    margin-bottom: 60%;
 }
 .productos .btn-intrologo{
   margin-bottom: 3%;
+  margin-top: -4%;
 }
 
 .productos h2 {
@@ -815,7 +817,8 @@ header {
   margin: 30px auto;  /* Espacio alrededor */
   max-width: 1200px; /* Ancho máximo para centrar en pantallas grandes */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  margin-top: -5%;
+  margin-top: -50%;
+  
 }
 
 /* Contenedor interno para organizar las secciones en Grid */
@@ -903,8 +906,9 @@ header {
     grid-template-rows: auto auto auto;   /* Tres filas, si hace falta */
   }
   .footer{
-    margin-top: 35%;
+    margin-top: 50%;
   }
+
   /* "Inicio" puede pasar a la primera fila, ocupando ambas columnas */
   .footer-nav {
     grid-column: 1 / 3;
@@ -944,5 +948,54 @@ header {
 
   .footer-bottom {
     margin-top: 15px;
+  }
+}
+@media (max-width: 600px) {
+  /* Aseguramos que el footer tenga un margen superior positivo */
+  .footer {
+    margin-top: 40%; /* Ajusta este valor según tu diseño */
+  }
+  
+  /* Si el contenido se superpone, agrega un padding-bottom al contenedor principal.
+     Asumiendo que tu contenedor principal tenga la clase .main-content, de lo contrario,
+     reemplázala por la clase o ID correspondiente. */
+  .main-content {
+    padding-bottom: 50px; /* Espacio adicional para separar el contenido del footer */
+  }
+}
+
+/* Para pantallas muy pequeñas (por debajo de 320px, por ejemplo) */
+@media (max-width: 320px) {
+  /* Ajuste general del footer */
+  .footer {
+    /* Aumenta el margen superior si lo necesitas */
+    
+  }
+
+  /* Ajuste de la grilla a una sola columna */
+  .footer-container {
+    grid-template-columns: 1fr; 
+    grid-template-rows: auto auto auto auto;
+    gap: 15px;
+  }
+
+  /* El enlace "Inicio" se mantiene centrado, pero reducimos el tamaño de fuente */
+  .footer-nav a {
+    font-size: 0.9rem;
+  }
+
+  /* Reducimos el tamaño del texto en la parte izquierda */
+  .footer-left p {
+    font-size: 0.9rem;
+  }
+
+  /* Reducimos la imagen QR */
+  .footer-right img {
+    width: 80px; /* Ajusta según necesites */
+  }
+
+  /* Ajustamos el texto de derechos reservados */
+  .footer-bottom p {
+    font-size: 0.8rem;
   }
 }
