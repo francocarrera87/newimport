@@ -100,7 +100,7 @@ nav ul li a:hover {
    SECCIÓN DE INTRODUCCIÓN (Hero)
 =================================================== */
 .section-intrologo {
-    background: linear-gradient(0deg, #ecf0f1 50%, #b2627a 100%);
+    background: linear-gradient(0deg, #ecf0f1 50%, #b2627a 85%);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -572,7 +572,6 @@ footer {
 ================================ */
 header {
   background-color: #b2627a;
-  padding: 15px 50px;
 }
 
 .navbar {
@@ -622,7 +621,6 @@ header {
   width: 25px;
   height: 3px;
   background: #fff;
-  margin: 4px 0;
   transition: 0.3s;
 }
 
@@ -669,6 +667,7 @@ header {
   .nav-logo-mobile img {
     max-width: 250px;
     height: auto;
+    align-items: center;
   }
 
   .nav-menu {
@@ -685,18 +684,23 @@ header {
     opacity: 0;
     max-height: 0;
     margin: 0;
+    max-width: 125%;
   }
 
   .nav-menu.active {
     display: flex;
     opacity: 1;
-    max-height: 500px; /* Máximo permitido para la animación */
-    min-height: 500px; /* Forzar que tenga al menos 500px de alto */
-    background: linear-gradient(0deg, #ecf0f16f 20%, rgba(178, 98, 122, 0.868) 90%);
+    min-height: 100vh; /* Ajusta este valor según la cantidad de elementos */
+    background: linear-gradient(0deg, #ecf0f100 0%, #b2627af7 60%);
     margin: 0;
     padding: 0;
-    border-radius: 0 0 30% 30%;
+    border-radius: 0 0 0 0;
     animation: dropdownOpen 0.5s ease-out;
+    left: 0;
+    width: calc(100% + 40px);
+    margin-left: -45px;
+    align-items: center;
+    width: 100vh;
   }
 
   .nav-item {
@@ -803,3 +807,142 @@ header {
   }
   
 /*=============================================*/
+/* Footer con esquinas redondeadas y fondo claro */
+.footer {
+  background-color: #f9f9f9;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 30px auto;  /* Espacio alrededor */
+  max-width: 1200px; /* Ancho máximo para centrar en pantallas grandes */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: -5%;
+}
+
+/* Contenedor interno para organizar las secciones en Grid */
+.footer-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; /* Tres columnas para la parte superior */
+  grid-template-rows: auto auto;      /* Dos filas: arriba y abajo */
+  gap: 20px;                          /* Espacio entre celdas */
+  align-items: start;                 /* Alinea los elementos arriba */
+  position: relative;
+}
+
+/* Sección Superior-Centro: enlace de "Inicio" */
+.footer-nav {
+  grid-column: 2 / 3;     /* Ocupa la segunda columna (la del medio) */
+  justify-self: center;   /* Centra horizontalmente en esa columna */
+}
+
+/* Estilos del enlace "Inicio" */
+.footer-nav a {
+  text-decoration: none;
+  color: #862341;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+  color: #c0003c;
+}
+
+/* Zona Izquierda: "Redes Sociales" y "Contacto" */
+.footer-left {
+  grid-column: 1 / 2; /* Primera columna */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Estilos de texto para la parte izquierda */
+.footer-left p {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: #2c3e50;       /* Ajusta según tu paleta */
+  line-height: 1.4;
+}
+
+/* Zona Derecha: Imagen (QR) */
+.footer-right {
+  grid-column: 3 / 4; /* Tercera columna */
+  text-align: right;  /* Alinea el contenido a la derecha */
+}
+
+.footer-right img {
+  width: 100px;  /* Ajusta según el tamaño de tu QR */
+  height: auto;
+}
+
+/* Parte Inferior: Derechos reservados */
+.footer-bottom {
+  grid-column: 1 / 4;        /* Ocupa las tres columnas */
+  justify-self: center;      /* Centra horizontalmente */
+  text-align: center;
+  margin-top: 10px;          /* Espacio adicional */
+}
+
+/* Estilo del texto de derechos reservados */
+.footer-bottom p {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* ================================
+   Responsividad (Opcional)
+================================ */
+
+/* Para pantallas medianas o tablets */
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;       /* Dos columnas */
+    grid-template-rows: auto auto auto;   /* Tres filas, si hace falta */
+  }
+  .footer{
+    margin-top: 35%;
+  }
+  /* "Inicio" puede pasar a la primera fila, ocupando ambas columnas */
+  .footer-nav {
+    grid-column: 1 / 3;
+    justify-self: center;
+    
+  }
+
+  /* Ajustamos la zona derecha para que aparezca abajo si no cabe */
+  .footer-right {
+    grid-column: 2 / 3;
+    text-align: right;
+  }
+
+  /* Derechos reservados también se ubica en la fila nueva */
+  .footer-bottom {
+    grid-column: 1 / 3;
+  }
+}
+
+/* Para pantallas muy pequeñas (móviles) */
+@media (max-width: 480px) {
+  .footer-container {
+    grid-template-columns: 1fr; /* Una sola columna */
+    grid-template-rows: auto auto auto auto;
+  }
+
+  .footer-nav {
+    grid-column: 1 / 2;
+    justify-self: center;
+    margin-bottom: 10px;
+  }
+
+  .footer-right {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  .footer-bottom {
+    margin-top: 15px;
+  }
+}

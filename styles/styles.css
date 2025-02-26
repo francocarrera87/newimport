@@ -24,7 +24,7 @@ body {
     font-family: 'Poppins', sans-serif;
     /* Fondo adaptado para coincidir con la homepage */
     background: #ecf0f1;
-    background: linear-gradient(0deg, rgba(178,98,122,1) 0%, rgba(236,240,241,1) 30%, rgba(236,240,241,1) 56%, rgba(186,117,138,1) 95%);
+    background: linear-gradient(0deg, #b2627a 5%, rgba(236,240,241,1) 30%, rgba(236,240,241,1) 50%, #b2627a 95%);
    
     color: var(--text-color);
     margin: 0; /* Se eliminan márgenes para que el fondo se extienda en toda la pantalla */
@@ -63,7 +63,7 @@ body {
     height: 40%;
     border-radius: 50%;
     object-fit: cover;
-    margin-bottom: -35%;
+    margin-bottom: -33%;
 }
 
 .text-container h1 {
@@ -252,6 +252,7 @@ body {
     .box {
         width: 95%;
         padding: 20px;
+        margin-top: 20%;
     }
 
     .title h1 {
@@ -355,7 +356,6 @@ body {
     width: 25px;
     height: 3px;
     background: #fff;
-    
     transition: 0.3s;
   }
   
@@ -383,6 +383,7 @@ body {
       width: 100%;
       padding: 15px 20px;
       z-index: 1000;
+      
     }
     
     .navbar {
@@ -440,15 +441,16 @@ body {
     .nav-menu.active {
       display: flex;
       opacity: 1;
-      min-height: 700px; /* Ajusta este valor según la cantidad de elementos */
-      background: linear-gradient(0deg, #ecf0f160 5%, rgba(178, 98, 122, 0.967) 60%);
+      min-height: 100vh; /* Ajusta este valor según la cantidad de elementos */
+      background: linear-gradient(0deg, #ecf0f100 0%, #b2627af7 60%);
       margin: 0;
       padding: 0;
-      border-radius: 0 0 30% 30%;
+      border-radius: 0 0 0 0;
       animation: dropdownOpen 0.5s ease-out;
       left: 0;
       width: calc(100% + 40px);
-      margin-left: -20px;
+      margin-left: -45px;
+      align-items: center;
     }
   }
   
