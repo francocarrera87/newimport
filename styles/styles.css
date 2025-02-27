@@ -465,4 +465,214 @@ body {
       transform: translateY(0);
     }
   }
+  /* Footer con esquinas redondeadas y fondo claro */
+.footer {
+    background-color: #f9f9f9;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 30px auto;  /* Espacio alrededor */
+    max-width: 1200px; /* Ancho máximo para centrar en pantallas grandes */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    
+    
+  }
   
+  /* Contenedor interno para organizar las secciones en Grid */
+  .footer-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr; /* Tres columnas para la parte superior */
+    grid-template-rows: auto auto;      /* Dos filas: arriba y abajo */
+    gap: 20px;                          /* Espacio entre celdas */
+    align-items: start;                 /* Alinea los elementos arriba */
+    position: relative;
+  }
+  
+  /* Sección Superior-Centro: enlace de "Inicio" */
+  .footer-nav {
+    grid-column: 2 / 3;     /* Ocupa la segunda columna (la del medio) */
+    justify-self: center;   /* Centra horizontalmente en esa columna */
+  }
+  
+  /* Estilos del enlace "Inicio" */
+  .footer-nav a {
+    text-decoration: none;
+    color: #862341;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-nav a:hover {
+    color: #c0003c;
+  }
+  
+  /* Zona Izquierda: "Redes Sociales" y "Contacto" */
+  .footer-left {
+    grid-column: 1 / 2; /* Primera columna */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  /* Estilos de texto para la parte izquierda */
+  .footer-left p {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: #2c3e50;       /* Ajusta según tu paleta */
+    line-height: 1.4;
+  }
+  
+  /* Zona Derecha: Imagen (QR) */
+  .footer-right {
+    grid-column: 3 / 4; /* Tercera columna */
+    text-align: right;  /* Alinea el contenido a la derecha */
+  }
+  
+  .footer-right img {
+    width: 100px;  /* Ajusta según el tamaño de tu QR */
+    height: auto;
+  }
+  
+  /* Parte Inferior: Derechos reservados */
+  .footer-bottom {
+    grid-column: 1 / 4;        /* Ocupa las tres columnas */
+    justify-self: center;      /* Centra horizontalmente */
+    text-align: center;
+    margin-top: 10px;          /* Espacio adicional */
+  }
+  
+  /* Estilo del texto de derechos reservados */
+  .footer-bottom p {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    color: #666;
+  }
+  
+  /* ================================
+     Responsividad (Opcional)
+  ================================ */
+  
+  /* Para pantallas medianas o tablets */
+  @media (max-width: 768px) {
+    .footer-container {
+      grid-template-columns: 1fr 1fr;       /* Dos columnas */
+      grid-template-rows: auto auto auto;   /* Tres filas, si hace falta */
+    }
+   
+  
+    /* "Inicio" puede pasar a la primera fila, ocupando ambas columnas */
+    .footer-nav {
+      grid-column: 1 / 3;
+      justify-self: center;
+      
+    }
+  
+    /* Ajustamos la zona derecha para que aparezca abajo si no cabe */
+    .footer-right {
+      grid-column: 2 / 3;
+      text-align: right;
+    }
+  
+    /* Derechos reservados también se ubica en la fila nueva */
+    .footer-bottom {
+      grid-column: 1 / 3;
+    }
+  }
+  
+  /* Para pantallas muy pequeñas (móviles) */
+  @media (max-width: 480px) {
+    .footer-container {
+      grid-template-columns: 1fr; /* Una sola columna */
+      grid-template-rows: auto auto auto auto;
+    }
+  
+    .footer-nav {
+      grid-column: 1 / 2;
+      justify-self: center;
+      margin-bottom: 10px;
+    }
+  
+    .footer-right {
+      text-align: center;
+      margin-top: 10px;
+    }
+  
+    .footer-bottom {
+      margin-top: 15px;
+    }
+  }
+  @media (max-width: 600px) {
+    /* Aseguramos que el footer tenga un margen superior positivo */
+    .footer {
+      margin-top: 40%; /* Ajusta este valor según tu diseño */
+    }
+    
+    /* Si el contenido se superpone, agrega un padding-bottom al contenedor principal.
+       Asumiendo que tu contenedor principal tenga la clase .main-content, de lo contrario,
+       reemplázala por la clase o ID correspondiente. */
+    .main-content {
+      padding-bottom: 50px; /* Espacio adicional para separar el contenido del footer */
+    }
+  }
+  
+  /* Para pantallas muy pequeñas (por debajo de 320px, por ejemplo) */
+  @media (max-width: 320px) {
+    /* Ajuste general del footer */
+
+  
+    /* Ajuste de la grilla a una sola columna */
+    .footer-container {
+      grid-template-columns: 1fr; 
+      grid-template-rows: auto auto auto auto;
+      gap: 15px;
+    }
+  
+    /* El enlace "Inicio" se mantiene centrado, pero reducimos el tamaño de fuente */
+    .footer-nav a {
+      font-size: 0.9rem;
+    }
+  
+    /* Reducimos el tamaño del texto en la parte izquierda */
+    .footer-left p {
+      font-size: 0.9rem;
+    }
+  
+    /* Reducimos la imagen QR */
+    .footer-right img {
+      width: 80px; /* Ajusta según necesites */
+    }
+  
+    /* Ajustamos el texto de derechos reservados */
+    .footer-bottom p {
+      font-size: 0.8rem;
+    }
+  }
+
+/*=========================icono wha=======================*/
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  color: white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  text-decoration: none; /* Evita subrayado */
+}
+
+.whatsapp-float:hover {
+  background-color: #1ebe57;
+}
+/*===========================================================*/

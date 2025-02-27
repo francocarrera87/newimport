@@ -49,7 +49,7 @@ header {
     display: flex;
     justify-content: center; /* Centrado en escritorio */
     align-items: center;
-    padding: 15px 50px;
+    padding: 15px;
     color: white;
 }
 
@@ -446,13 +446,23 @@ footer {
     color: white;
 }
 
+.footer-left i {
+  color: #5f5f5f;
+  
+}
+
+.footer-left {
+  align-items: right;
+}
+
+
 /* ===================================================
    MEDIA QUERIES
 =================================================== */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
-        padding: 15px 20px;
+        padding: 15px;
         text-align: center;
     }
     
@@ -700,7 +710,7 @@ header {
     animation: dropdownOpen 0.5s ease-out;
     left: 0;
     width: calc(100% + 40px);
-    margin-left: -45px;
+    margin-left: -12%;
     align-items: center;
     width: 100vh;
   }
@@ -967,10 +977,7 @@ header {
 /* Para pantallas muy pequeñas (por debajo de 320px, por ejemplo) */
 @media (max-width: 320px) {
   /* Ajuste general del footer */
-  .footer {
-    /* Aumenta el margen superior si lo necesitas */
-    
-  }
+
 
   /* Ajuste de la grilla a una sola columna */
   .footer-container {
@@ -998,4 +1005,153 @@ header {
   .footer-bottom p {
     font-size: 0.8rem;
   }
+}
+/* Estilo base para .section-intrologo */
+.section-intrologo {
+  background: linear-gradient(0deg, #ecf0f1 50%, #b2627a 85%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  min-height: 90vh; /* Altura mínima para pantallas grandes */
+}
+
+/* Media Query para pantallas medianas (tablets, hasta 768px) */
+@media (max-width: 768px) {
+  .section-intrologo {
+    min-height: 100vh; /* Reduce la altura */
+    padding: 20px;
+  }
+  .logo-container img {
+    width: 180px; /* Reduce el tamaño de la imagen */
+    height: 180px;
+  }
+  .text-container h1 {
+    font-size: 2.5rem; /* Disminuye el tamaño del título */
+  }
+  .text-container h2 {
+    font-size: 1.1rem; /* Ajusta el subtítulo */
+  }
+  .btn-intrologo {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Media Query para pantallas pequeñas (móviles, hasta 480px) */
+@media (max-width: 480px) {
+  .section-intrologo {
+    min-height: 100vh;
+    padding: 15px;
+  }
+  .logo-container img {
+    width: 150px;
+    height: 150px;
+  }
+  .text-container h1 {
+    font-size: 2rem;
+  }
+  .text-container h2 {
+    font-size: 1rem;
+  }
+  .btn-intrologo {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+  }
+}
+
+/*=========================icono wha=======================*/
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  color: white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  text-decoration: none; /* Evita subrayado */
+}
+
+.whatsapp-float:hover {
+  background-color: #1ebe57;
+}
+/*===========================================================*/
+/* Estilo base para .section-intrologo */
+.section-intrologo {
+  background: linear-gradient(0deg, #ecf0f1 50%, #b2627a 85%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  text-align: center;
+  min-height: 90vh; /* Altura mínima para pantallas grandes */
+}
+
+/* Media Query para pantallas medianas (tablets, hasta 768px) */
+@media (max-width: 768px) {
+  .section-intrologo {
+    min-height: 70vh; /* Reduce la altura */
+    padding: 20px;
+  }
+  .logo-container img {
+    width: 180px; /* Reduce el tamaño de la imagen */
+    height: 180px;
+  }
+  .text-container h1 {
+    font-size: 2.5rem; /* Disminuye el tamaño del título */
+  }
+  .text-container h2 {
+    font-size: 1.1rem; /* Ajusta el subtítulo */
+  }
+  .btn-intrologo {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Media Query para pantallas pequeñas (móviles, hasta 480px) */
+@media (max-width: 480px) {
+  .section-intrologo {
+    min-height: 60vh;
+    padding: 15px;
+  }
+  .logo-container img {
+    width: 150px;
+    height: 150px;
+  }
+  .text-container h1 {
+    font-size: 2rem;
+  }
+  .text-container h2 {
+    font-size: 1rem;
+  }
+  .btn-intrologo {
+    padding: 8px 16px;
+    font-size: 0.8rem;
+  }
+}
+footer a {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  color: #862341; /* Color base */
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #c0003c; /* Color al pasar el cursor */
 }
