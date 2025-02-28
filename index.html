@@ -133,7 +133,8 @@
     </div>
   </div>
   <!-- Botones de control para desplazamiento manual -->
-  
+  <button class="prev">&#10094;</button>
+  <button class="next">&#10095;</button>
 </section>
 
     <!-- Carrusel de marcas -->
@@ -257,72 +258,75 @@
   
   
   
+  
   <script>
-    // Seleccionamos los slides y definimos el índice actual
-    const slides = document.querySelectorAll('.carousel-inner .slide');
-    const totalSlides = slides.length;
-    let index = 0;
-  
-    // Función para actualizar la posición del carrusel y disparar la animación de pulso
-    function updateCarousel() {
-      const carouselInner = document.querySelector('.carousel-inner');
-      carouselInner.style.transform = `translateX(${-index * 100}%)`;
-  
-      // Remover la clase de pulso de todas las imágenes (por si estuviera en ejecución)
-      slides.forEach(slide => {
-        const img = slide.querySelector('.slide-img');
-        if (img) img.classList.remove('pulse-once');
+    document.addEventListener('DOMContentLoaded', () => {
+      // --- Menú Hamburguesa ---
+      const hamburger = document.getElementById('hamburger');
+      const navMenu = document.getElementById('nav-menu');
+      hamburger.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
       });
-  
-      // Agregar la clase de pulso a la imagen del slide actual
-      const currentImg = slides[index].querySelector('.slide-img');
-      if (currentImg) {
-        currentImg.classList.add('pulse-once');
-        // Se remueve la clase una vez finalizada la animación para que pueda repetirse en la próxima transición
-        currentImg.addEventListener('animationend', function removePulse() {
-          currentImg.classList.remove('pulse-once');
-          currentImg.removeEventListener('animationend', removePulse);
+      
+      // --- Carrusel con animación de pulso y swipe ---
+      const slides = document.querySelectorAll('.carousel-inner .slide');
+      const totalSlides = slides.length;
+      let index = 0;
+      const carouselInner = document.querySelector('.carousel-inner');
+      
+      // Función para actualizar el carrusel y activar el pulso
+      function updateCarousel() {
+        carouselInner.style.transform = `translateX(${-index * 100}%)`;
+        
+        // Remover la clase de pulso de todas las imágenes
+        slides.forEach(slide => {
+          const img = slide.querySelector('.slide-img');
+          if (img) img.classList.remove('pulse-once');
         });
-      }
-    }
-  
-    // Función para el cambio automático cada 5 segundos
-    function autoSlide() {
-      index = (index + 1) % totalSlides;
-      updateCarousel();
-    }
-    let slideInterval = setInterval(autoSlide, 5000);
-  
-    // Ejemplo de integración con swipe en dispositivos táctiles
-    const carousel = document.querySelector('.carousel-inner');
-    let startX = 0, endX = 0;
-    
-    carousel.addEventListener('touchstart', (e) => {
-      startX = e.touches[0].clientX;
-    });
-  
-    carousel.addEventListener('touchmove', (e) => {
-      endX = e.touches[0].clientX;
-    });
-  
-    carousel.addEventListener('touchend', () => {
-      const diffX = startX - endX;
-      if (Math.abs(diffX) > 50) { // Umbral para evitar movimientos accidentales
-        clearInterval(slideInterval);
-        if (diffX > 0) {
-          index = (index + 1) % totalSlides;
-        } else {
-          index = (index - 1 + totalSlides) % totalSlides;
+        
+        // Agregar la clase de pulso a la imagen del slide actual
+        const currentImg = slides[index].querySelector('.slide-img');
+        if (currentImg) {
+          currentImg.classList.add('pulse-once');
+          // Remover la clase al finalizar la animación para poder repetirla en la siguiente transición
+          currentImg.addEventListener('animationend', function removePulse() {
+            currentImg.classList.remove('pulse-once');
+            currentImg.removeEventListener('animationend', removePulse);
+          });
         }
-        updateCarousel();
-        slideInterval = setInterval(autoSlide, 5000);
       }
+      
+      // Función de auto-slide
+      function autoSlide() {
+        index = (index + 1) % totalSlides;
+        updateCarousel();
+      }
+      let slideInterval = setInterval(autoSlide, 5000);
+      
+      // Manejo de swipe para dispositivos táctiles
+      let startX = 0, endX = 0;
+      carouselInner.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+      });
+      carouselInner.addEventListener('touchmove', (e) => {
+        endX = e.touches[0].clientX;
+      });
+      carouselInner.addEventListener('touchend', () => {
+        const diffX = startX - endX;
+        if (Math.abs(diffX) > 50) { // Umbral para detectar swipe
+          clearInterval(slideInterval);
+          if (diffX > 0) {
+            index = (index + 1) % totalSlides;
+          } else {
+            index = (index - 1 + totalSlides) % totalSlides;
+          }
+          updateCarousel();
+          slideInterval = setInterval(autoSlide, 5000);
+        }
+      });
     });
   </script>
   
-  
-  
-
 
 
 </body>
