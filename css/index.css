@@ -49,7 +49,8 @@ header {
     display: flex;
     justify-content: center; /* Centrado en escritorio */
     align-items: center;
-    padding: 15px;
+    padding-top: 15px;
+    padding-left: 3.5%;
     color: white;
 }
 
@@ -1217,4 +1218,39 @@ footer a:hover {
 }
 .carousel-intro h2{
   font-size: 2.3rem;
+}
+.carousel-intro {
+  position: relative;
+}
+
+/* Botones de control, inicialmente ocultos */
+.carousel-intro .prev,
+.carousel-intro .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 10px;
+  cursor: pointer;
+  display: none;
+  z-index: 10;
+}
+
+/* Posicionamiento de cada botón */
+.carousel-intro .prev {
+  left: 10px;
+}
+.carousel-intro .next {
+  right: 10px;
+}
+
+/* Mostrar botones en pantallas pequeñas */
+@media (max-width: 768px) {
+  .carousel-intro .prev,
+  .carousel-intro .next {
+    display: block;
+  }
 }
