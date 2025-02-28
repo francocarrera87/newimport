@@ -37,15 +37,15 @@ body {
     font-family: 'Poppins', sans-serif;
     background-color: #ecf0f1;
     color: #2c3e50;
-    background: #b2627a;
-    background: linear-gradient(0deg, #b2627a 4%, #ecf0f1 10%);
+    background: #8bb4d4;
+    background: linear-gradient(0deg, #8bb4d4 4%, #ecf0f1 10%);
 }
 
 /* ===================================================
    HEADER (Logo, Navbar y Lista de Precios)
 =================================================== */
 header {
-    background-color: #b2627a;
+    background-color: #8bb4d4;
     display: flex;
     justify-content: center; /* Centrado en escritorio */
     align-items: center;
@@ -100,7 +100,7 @@ nav ul li a:hover {
    SECCIÓN DE INTRODUCCIÓN (Hero)
 =================================================== */
 .section-intrologo {
-    background: linear-gradient(0deg, #ecf0f1 50%, #b2627a 85%);
+    background: linear-gradient(0deg, #ecf0f1 50%, #8bb4d4 90%);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -144,10 +144,11 @@ nav ul li a:hover {
 
 /* Estilos para el color dividido del título */
 .color1 {
-    color: #c0003c;
+    color: #006f8a;
 }
 .color2 {
-    color: #b63b60;
+    color: #33aecc;
+    
 }
 
 /* Botón de la sección de introducción */
@@ -180,7 +181,7 @@ nav ul li a:hover {
     gap: 2rem;
     padding: 8%;
     background-color: #ecf0f1;
-    background: linear-gradient(0deg, rgba(236,240,241,1) 15%, rgba(178,98,122,0.18539915966386555) 49%, rgba(236,240,241,1) 80%);
+    background: linear-gradient(0deg, #ecf0f1 15%, #8bb4d481 49%, #ecf0f1 80%);
     min-height: 80vh;
     padding-bottom: 30%;
 }
@@ -440,7 +441,7 @@ nav ul li a:hover {
    FOOTER
 =================================================== */
 footer {
-    background-color: #b2627a;
+    background-color: #006f8a;
     text-align: center;
     padding: 20px;
     color: white;
@@ -583,7 +584,7 @@ footer {
    Estilos del Header y Navbar (Fijo en móvil)
 ================================ */
 header {
-  background-color: #b2627a;
+  background-color: #8bb4d4
 }
 
 .navbar {
@@ -605,7 +606,7 @@ header {
 
 .nav-item a {
   text-decoration: none;
-  color: #862341;
+  color: #326977e1;
   font-weight: bold;
   font-family: 'Montserrat', sans-serif;
   transition: 0.4s;
@@ -613,7 +614,7 @@ header {
 }
 
 .nav-item a:hover {
-  color: #c0003c;
+  color: #2d616e;
 }
 
 /* Ocultar el logo móvil en escritorio */
@@ -690,7 +691,7 @@ header {
     top: 30px; /* Ajusta según la altura del header */
     left: 0;
     width: 100%;
-    background-color: #b2627a;
+    background-color: #8bb4d4;
     transition: max-height 0.5s ease, opacity 0.5s ease;
     overflow: hidden;
     opacity: 0;
@@ -703,7 +704,7 @@ header {
     display: flex;
     opacity: 1;
     min-height: 100vh; /* Ajusta este valor según la cantidad de elementos */
-    background: linear-gradient(0deg, #ecf0f100 0%, #b2627af7 60%);
+    background: linear-gradient(0deg, #ecf0f100 0%, #8bb4d4 60%);
     margin: 0;
     padding: 0;
     border-radius: 0 0 0 0;
@@ -780,7 +781,7 @@ header {
 .titulos {
     text-align: center;
     padding: 2rem 0;
-    background: linear-gradient(90deg, #c0003c, #e7688e); /* Degradado acorde a los colores usados */
+    background: linear-gradient(90deg, #006f8a, #8bb4d4); /* Degradado acorde a los colores usados */
    
   }
   
@@ -1008,7 +1009,7 @@ header {
 }
 /* Estilo base para .section-intrologo */
 .section-intrologo {
-  background: linear-gradient(0deg, #ecf0f1 50%, #b2627a 85%);
+  background: linear-gradient(0deg, #ecf0f1 50%, #8bb4d4 85%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1089,7 +1090,7 @@ header {
 /*===========================================================*/
 /* Estilo base para .section-intrologo */
 .section-intrologo {
-  background: linear-gradient(0deg, #ecf0f1 50%, #b2627a 85%);
+  background: linear-gradient(0deg, #ecf0f1 50%, #8bb4d4 85%);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -1157,7 +1158,7 @@ footer a:hover {
 }
 /* Estilo base para la sección de introducción */
 .section-intrologo {
-  background: linear-gradient(0deg, #ecf0f1 50%, #b2627a 85%);
+  background: linear-gradient(0deg, #ecf0f1 50%, #8bb4d4 95%);
   display: flex;
   flex-direction: column;
   align-items: center;
