@@ -24,7 +24,7 @@ body {
     font-family: 'Poppins', sans-serif;
     /* Fondo adaptado para coincidir con la homepage */
     background: #ecf0f1;
-    background: linear-gradient(0deg, #b2627a 5%, rgba(236,240,241,1) 30%, rgba(236,240,241,1) 50%, #b2627a 95%);
+    background: linear-gradient(0deg, #8bb4d4 5%, rgba(236,240,241,1) 30%, rgba(236,240,241,1) 50%, #8bb4d4 95%);
    
     color: var(--text-color);
     margin: 0; /* Se eliminan márgenes para que el fondo se extienda en toda la pantalla */
@@ -276,7 +276,7 @@ body {
 .titulos {
     text-align: center;
     padding: 2rem 0;
-    background: linear-gradient(90deg, #c0003c, #e7688e); /* Degradado acorde a los colores usados */
+    background: linear-gradient(90deg, #006f8a, #8bb4d4); /* Degradado acorde a los colores usados */
     width: 100%;
     border-radius: 20px;
     
@@ -330,7 +330,7 @@ body {
   
   .nav-item a {
     text-decoration: none;
-    color: #862341;
+    color: #006f8a;
     font-weight: bold;
     font-family: 'Montserrat', sans-serif;
     transition: 0.4s;
@@ -338,7 +338,7 @@ body {
   }
   
   .nav-item a:hover {
-    color: #ffffff;
+    color: #07a1c7;
   }
   
   /* Ocultar el logo móvil en escritorio */
@@ -361,7 +361,7 @@ body {
   
   /* Estilos para el header en escritorio */
   header {
-    background-color: #b2627a;
+    background-color: #8bb4d4;
     
   }
   
@@ -430,7 +430,7 @@ body {
       left: 0;
       width: calc(100% + 40px); /* Se expande para compensar el padding del header */
       margin-left: -20px;       /* Desplazamos a la izquierda para que quede alineado */
-      background-color: #b2627a;
+      background-color: #8bb4d4;
       transition: max-height 0.5s ease, opacity 0.5s ease;
       overflow: hidden;
       opacity: 0;
@@ -442,7 +442,7 @@ body {
       display: flex;
       opacity: 1;
       min-height: 100vh; /* Ajusta este valor según la cantidad de elementos */
-      background: linear-gradient(0deg, #ecf0f100 0%, #b2627af7 60%);
+      background: linear-gradient(0deg, #ecf0f100 0%, #8bb4d4f7 60%);
       margin: 0;
       padding: 0;
       border-radius: 0 0 0 0;
@@ -496,7 +496,7 @@ body {
   /* Estilos del enlace "Inicio" */
   .footer-nav a {
     text-decoration: none;
-    color: #862341;
+    color: #006f8a;
     font-weight: bold;
     font-family: 'Montserrat', sans-serif;
     font-size: 1.1rem;
@@ -504,7 +504,7 @@ body {
   }
   
   .footer-nav a:hover {
-    color: #c0003c;
+    color: #05a8d1;
   }
   
   /* Zona Izquierda: "Redes Sociales" y "Contacto" */
