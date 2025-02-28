@@ -263,9 +263,27 @@
     const totalSlides = slides.length;
     let index = 0;
   
-    // Función para actualizar la posición del carrusel
+    // Función para actualizar la posición del carrusel y disparar la animación de pulso
     function updateCarousel() {
-      document.querySelector('.carousel-inner').style.transform = `translateX(${-index * 100}%)`;
+      const carouselInner = document.querySelector('.carousel-inner');
+      carouselInner.style.transform = `translateX(${-index * 100}%)`;
+  
+      // Remover la clase de pulso de todas las imágenes (por si estuviera en ejecución)
+      slides.forEach(slide => {
+        const img = slide.querySelector('.slide-img');
+        if (img) img.classList.remove('pulse-once');
+      });
+  
+      // Agregar la clase de pulso a la imagen del slide actual
+      const currentImg = slides[index].querySelector('.slide-img');
+      if (currentImg) {
+        currentImg.classList.add('pulse-once');
+        // Se remueve la clase una vez finalizada la animación para que pueda repetirse en la próxima transición
+        currentImg.addEventListener('animationend', function removePulse() {
+          currentImg.classList.remove('pulse-once');
+          currentImg.removeEventListener('animationend', removePulse);
+        });
+      }
     }
   
     // Función para el cambio automático cada 5 segundos
@@ -275,39 +293,34 @@
     }
     let slideInterval = setInterval(autoSlide, 5000);
   
-    // Variables para almacenar la posición táctil
-    let startX = 0;
-    let endX = 0;
+    // Ejemplo de integración con swipe en dispositivos táctiles
     const carousel = document.querySelector('.carousel-inner');
-  
-    // Al iniciar el toque, guardamos la posición inicial
+    let startX = 0, endX = 0;
+    
     carousel.addEventListener('touchstart', (e) => {
       startX = e.touches[0].clientX;
     });
   
-    // Durante el movimiento, actualizamos la posición
     carousel.addEventListener('touchmove', (e) => {
       endX = e.touches[0].clientX;
     });
   
-    // Al finalizar el toque, comparamos las posiciones
     carousel.addEventListener('touchend', () => {
       const diffX = startX - endX;
-      // Si la diferencia es significativa (umbral de 50px)
-      if (Math.abs(diffX) > 50) {
-        clearInterval(slideInterval); // Opcional: detener el auto-slide al interactuar
+      if (Math.abs(diffX) > 50) { // Umbral para evitar movimientos accidentales
+        clearInterval(slideInterval);
         if (diffX > 0) {
-          // Deslizar hacia la izquierda: siguiente slide
           index = (index + 1) % totalSlides;
         } else {
-          // Deslizar hacia la derecha: slide anterior
           index = (index - 1 + totalSlides) % totalSlides;
         }
         updateCarousel();
-        slideInterval = setInterval(autoSlide, 5000); // Reiniciar el auto-slide si se desea
+        slideInterval = setInterval(autoSlide, 5000);
       }
     });
   </script>
+  
+  
   
 
 

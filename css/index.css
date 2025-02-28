@@ -1239,18 +1239,12 @@ footer a:hover {
   z-index: 10;
 }
 
-/* Posicionamiento de cada botón */
-.carousel-intro .prev {
-  left: 10px;
-}
-.carousel-intro .next {
-  right: 10px;
+@keyframes pulse-once {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
 }
 
-/* Mostrar botones en pantallas pequeñas */
-@media (max-width: 768px) {
-  .carousel-intro .prev,
-  .carousel-intro .next {
-    display: block;
-  }
+.pulse-once {
+  animation: pulse-once 0.6s ease-in-out;
 }
