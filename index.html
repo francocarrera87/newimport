@@ -278,6 +278,32 @@
       });
     });
   </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+  const slides = document.querySelectorAll('.carousel-inner .slide');
+  let currentSlide = 0;
+
+  // Función para actualizar el slide activo
+  const updateSlide = (index) => {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === index);
+    });
+  };
+
+  // Avanzar al siguiente slide
+  document.querySelector('.next').addEventListener('click', () => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    updateSlide(currentSlide);
+  });
+
+  // Retroceder al slide anterior
+  document.querySelector('.prev').addEventListener('click', () => {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    updateSlide(currentSlide);
+  });
+});
+
+  </script>
 
 
 </body>

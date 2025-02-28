@@ -851,7 +851,7 @@ header {
 /* Estilos del enlace "Inicio" */
 .footer-nav a {
   text-decoration: none;
-  color: #862341;
+  color: #3d5369;
   font-weight: bold;
   font-family: 'Montserrat', sans-serif;
   font-size: 1.1rem;
@@ -859,7 +859,7 @@ header {
 }
 
 .footer-nav a:hover {
-  color: #c0003c;
+  color: #171c22;
 }
 
 /* Zona Izquierda: "Redes Sociales" y "Contacto" */
@@ -875,7 +875,7 @@ header {
   margin: 0;
   font-family: 'Poppins', sans-serif;
   font-size: 1rem;
-  color: #2c3e50;       /* Ajusta según tu paleta */
+  color: #2d3e50;       /* Ajusta según tu paleta */
   line-height: 1.4;
 }
 
