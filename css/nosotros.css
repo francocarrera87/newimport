@@ -1,0 +1,382 @@
+/* ===================================================
+   Reset Global y Configuración Base
+=================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Importación de fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+
+/* ===================================================
+   Tipografías generales
+   - Encabezados (h1, h2, h3, etc.): Montserrat
+   - Párrafos (p): Poppins
+=================================================== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+p {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* ===================================================
+   Body
+=================================================== */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(0deg, #8bb4d4 4%, #ecf0f1 10%);
+  color: #2c3e50;
+  background: linear-gradient(0deg, #ecf0f1 50%, #8bb4d4 85%);
+}
+
+/* ===================================================
+   HEADER y NAVEGACIÓN
+=================================================== */
+header {
+  background-color: #8bb4d4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 15px;
+  padding-left: 3.5%;
+  color: white;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 35px;
+  align-items: center;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: #326977e1;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  transition: 0.4s;
+  font-size: 1.3rem;
+}
+
+.nav-item a:hover {
+  color: #2d616e;
+}
+
+.nav-logo-mobile {
+  display: none;
+}
+
+/* Menú hamburguesa (Responsive) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 25px;
+  background: #fff;
+  margin: 4px 0;
+  transition: 0.3s;
+}
+
+/* Responsive: Menú y Header en móviles */
+@media (max-width: 768px) {
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 20px;
+    z-index: 1000;
+  }
+
+  .navbar {
+    position: relative;
+    justify-content: space-between;
+  }
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+  }
+
+  .hamburger span {
+    width: 25px;
+    height: 3px;
+    background: #fff;
+    margin: 4px 0;
+  }
+
+  .nav-logo-mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .nav-menu {
+    display: none; /* Oculto por defecto */
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 30px; /* Ajusta según la altura del header */
+    left: 0;
+    width: 100%;
+    background-color: #8bb4d4;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    overflow: hidden;
+    opacity: 0;
+    max-height: 0;
+  }
+
+  .nav-menu.active {
+    display: flex;
+    opacity: 1;
+    max-height: 300px; /* Valor ajustable según el contenido */
+  }
+
+  .nav-item {
+    margin: 10px 0;
+  }
+}
+
+/* ===================================================
+   Botón flotante de WhatsApp
+=================================================== */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  color: white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  background-color: #1ebe57;
+}
+
+/* ===================================================
+   Sección "Sobre Nosotros"
+=================================================== */
+#sobre-nosotros {
+background-color: #171c2200;
+  padding: 4rem 2rem;
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 3rem;
+  margin-left: 7%;
+  margin-right: 7%;
+}
+
+#sobre-nosotros .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#sobre-nosotros h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: #006f8a;
+  margin-bottom: 2rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-top: 8%;
+  
+}
+
+#sobre-nosotros p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+#sobre-nosotros ul {
+  list-style: disc;
+  margin: 1.5rem auto;
+  padding-left: 2rem;
+  text-align: left;
+  max-width: 800px;
+}
+
+#sobre-nosotros li {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+/* Responsive: Sección Sobre Nosotros */
+@media (max-width: 768px) {
+  #sobre-nosotros {
+    padding: 3rem 1rem;
+  }
+  
+  #sobre-nosotros h2 {
+    font-size: 2rem;
+  }
+  
+  #sobre-nosotros p,
+  #sobre-nosotros li {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #sobre-nosotros {
+    padding: 2rem 1rem;
+  }
+  
+  #sobre-nosotros h2 {
+    font-size: 1.75rem;
+  }
+  
+  #sobre-nosotros p,
+  #sobre-nosotros li {
+    font-size: 0.9rem;
+  }
+}
+
+/* ===================================================
+   FOOTER
+=================================================== */
+.footer {
+  background-color: #f9f9f9;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 30px auto;
+  max-width: 1200px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 50px;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.footer-nav {
+  grid-column: 2 / 3;
+  justify-self: center;
+}
+
+.footer-nav a {
+  text-decoration: none;
+  color: #3d5369;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+  color: #171c22;
+}
+
+.footer-left {
+  grid-column: 1 / 2;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-left p {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: #2d3e50;
+  line-height: 1.4;
+}
+
+.footer-right {
+  grid-column: 3 / 4;
+  text-align: right;
+}
+
+.footer-right img {
+  width: 100px;
+  height: auto;
+}
+
+.footer-bottom {
+  grid-column: 1 / 4;
+  justify-self: center;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Responsive: Footer */
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+  }
+  .footer-nav {
+    grid-column: 1 / 3;
+    justify-self: center;
+  }
+  .footer-bottom {
+    grid-column: 1 / 3;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+  .footer-nav {
+    margin-bottom: 10px;
+  }
+  .footer-right {
+    text-align: center;
+    margin-top: 10px;
+  }
+  .footer-bottom {
+    margin-top: 15px;
+  }
+}
