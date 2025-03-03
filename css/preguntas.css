@@ -1,0 +1,555 @@
+/* ===================================================
+   Reset Global y Configuración Base
+=================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Importación de fuentes */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
+
+/* ===================================================
+   Variables de Color y Tipografía
+=================================================== */
+:root {
+  --background-light: #ecf0f1;
+  --white: #fff;
+  --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --text-color: #2c3e50;
+  --secondary-color: #8bb4d4;
+  --light-accent: #a7e6f4;
+}
+
+/* ===================================================
+   Tipografías Generales
+   (Encabezados: Montserrat, Párrafos: Poppins)
+=================================================== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+p {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* ===================================================
+   Body
+=================================================== */
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(0deg, #ecf0f1 50%, #8bb4d4 85%);
+  color: var(--text-color);
+  padding: 2% 8%;
+}
+
+/* Agregamos padding-top en pantallas pequeñas para evitar que el contenido se oculte tras el header fijo */
+@media (max-width: 768px) {
+  body {
+    padding-top: 80px; /* Ajusta este valor según la altura real de tu header */
+  }
+}
+
+/* ===================================================
+   HEADER, NAVBAR Y MENÚ HAMBURGUESA
+=================================================== */
+header {
+  background-color: #8bb4d4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 15px;
+  padding-left: 3.5%;
+  color: #fff;
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 35px;
+  align-items: center;
+}
+
+.nav-item a {
+  text-decoration: none;
+  color: #326977e1;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: bold;
+  font-size: 1.3rem;
+  transition: 0.4s;
+}
+
+.nav-item a:hover {
+  color: #2d616e;
+}
+
+/* Logo móvil: se oculta en escritorio */
+.nav-logo-mobile {
+  display: none;
+}
+
+/* Menú hamburguesa (Responsive) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 25px;
+  background: #fff;
+  margin: 4px 0;
+  transition: 0.3s;
+}
+
+/* Responsive: Header y menú en móviles */
+@media (max-width: 768px) {
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 20px;
+    z-index: 1000;
+  }
+  .navbar {
+    position: relative;
+    justify-content: space-between;
+  }
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+  }
+  .nav-logo-mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+  .nav-logo-mobile img {
+    max-width: 250px;
+    height: auto;
+  }
+  .nav-menu {
+    display: none; /* Oculto por defecto */
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 60px; /* Ubicación debajo del header */
+    left: 0;
+    width: 100%;
+    background-color: #8bb4d4;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    overflow: hidden;
+    opacity: 0;
+    max-height: 0;
+  }
+  .nav-menu.active {
+    display: flex;
+    opacity: 1;
+    max-height: 300px; /* Ajusta según el contenido */
+  }
+  .nav-item {
+    margin: 10px 0;
+  }
+}
+
+/* ===================================================
+   BOTÓN FLOTANTE DE WHATSAPP
+=================================================== */
+.whatsapp-float {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25d366;
+  color: var(--white);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  box-shadow: 2px 2px 3px rgba(0,0,0,0.3);
+  z-index: 1000;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.whatsapp-float:hover {
+  background-color: #1ebe57;
+}
+
+/* ===================================================
+   SECCIÓN DE PREGUNTAS FRECUENTES (FAQ)
+=================================================== */
+.faq-section {
+  padding: 3rem 1rem;
+  background-color: var(--background-light);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  border-radius: 50px;
+  padding: 5%;
+  margin-top: 5%;
+}
+
+.faq-section .title {
+  grid-column: 1 / -1;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+  color: var(--text-color);
+}
+
+.faq-intro {
+  grid-column: 1 / -1;
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 0 1rem;
+}
+
+.faq-intro p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.1rem;
+  color: var(--text-color);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Botón colapsable para FAQ */
+.collapsible {
+  background: var(--secondary-color);
+  color: var(--white);
+  cursor: pointer;
+  padding: 20px 25px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 1.1rem;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  box-shadow: var(--shadow);
+  margin-top: 2%;
+}
+
+.collapsible:hover {
+  background-color: #006f8a;
+  transform: translateY(-2px);
+}
+
+.collapsible.active {
+  background-color: var(--secondary-color);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+/* Contenido colapsable */
+.content {
+  background-color: var(--background-light);
+  max-height: 0;
+  opacity: 0;
+  transition: all 0.5s ease-out;
+  border-radius: 0 0 12px 12px;
+  padding: 0 25px;
+  overflow: hidden;
+}
+
+/* Al abrir, el contenido se despliega y cambia fondo */
+.collapsible.active + .content {
+  max-height: 110%;
+  opacity: 1;
+  padding: 20px 25px;
+  margin-bottom: 15px;
+  background-color: rgb(233, 229, 229);
+  padding-bottom: 5rem;
+}
+
+.content p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: var(--text-color);
+  margin: 0;
+}
+
+/* ===================================================
+   Media Queries para el apartado FAQ
+=================================================== */
+/* Tablets */
+@media (max-width: 768px) {
+  .faq-section {
+    grid-template-columns: 1fr;
+    padding: 2rem 1rem;
+    margin-top: 10%;
+  }
+  
+  .faq-section .title {
+    font-size: 2rem;
+  }
+  
+  .collapsible {
+    font-size: 1rem;
+    padding: 15px 20px;
+  }
+  
+  .content {
+    padding: 15px 20px;
+  }
+}
+
+/* Móviles */
+@media (max-width: 480px) {
+  .faq-section {
+    padding: 1.5rem 1rem;
+  }
+  
+  .faq-section .title {
+    font-size: 1.8rem;
+  }
+  
+  .collapsible {
+    font-size: 0.95rem;
+    padding: 12px 15px;
+  }
+  
+  .content {
+    padding: 12px 15px;
+  }
+}
+
+/* ===================================================
+   PRESENTACIÓN FINAL (Opcional para index)
+=================================================== */
+.presentacion-final {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 1rem;
+  background-color: rgba(236, 240, 241, 0.0); /* Fondo transparente */
+}
+
+.tarjeta-newimport {
+  background-color: #fff;
+  max-width: 600px;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 2rem;
+  text-align: center;
+}
+
+.tarjeta-newimport h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #006f8a;
+}
+
+.tarjeta-newimport p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.btn-vermas {
+  background-color: #8bb4d4;
+  color: #fff;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-vermas:hover {
+  background-color: #006f8a;
+}
+
+/* ===================================================
+   Media Queries para Presentación Final
+=================================================== */
+/* Tablets */
+@media (max-width: 768px) {
+  .presentacion-final {
+    padding: 2rem 1rem;
+    margin-top: 35%;
+  }
+  .tarjeta-newimport {
+    padding: 1.5rem;
+    max-width: 90%;
+  }
+  .tarjeta-newimport h2 {
+    font-size: 1.6rem;
+  }
+  .tarjeta-newimport p {
+    font-size: 1rem;
+  }
+  .btn-vermas {
+    font-size: 0.9rem;
+    padding: 0.7rem 1.2rem;
+  }
+}
+
+/* Móviles */
+@media (max-width: 480px) {
+  .presentacion-final {
+    padding: 1.5rem 1rem;
+    margin-top: 55%;
+  }
+  .tarjeta-newimport {
+    padding: 1.2rem;
+    max-width: 95%;
+  }
+  .tarjeta-newimport h2 {
+    font-size: 1.4rem;
+  }
+  .tarjeta-newimport p {
+    font-size: 0.9rem;
+  }
+  .btn-vermas {
+    font-size: 0.8rem;
+    padding: 0.6rem 1rem;
+  }
+}
+
+/* ===================================================
+   FOOTER
+=================================================== */
+.footer {
+  background-color: #f9f9f9;
+  border-radius: 20px;
+  padding: 20px;
+  margin: 30px auto;
+  max-width: 1200px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin-top: 50px;
+}
+
+.footer-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.footer-nav {
+  grid-column: 2 / 3;
+  justify-self: center;
+}
+
+.footer-nav a {
+  text-decoration: none;
+  color: #3d5369;
+  font-weight: bold;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+  color: #171c22;
+}
+
+.footer-left {
+  grid-column: 1 / 2;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-left p {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  color: #2d3e50;
+  line-height: 1.4;
+}
+
+.footer-right {
+  grid-column: 3 / 4;
+  text-align: right;
+}
+
+.footer-right img {
+  width: 100px;
+  height: auto;
+}
+
+.footer-bottom {
+  grid-column: 1 / 4;
+  justify-self: center;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Responsive: Footer */
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+  }
+  .footer-nav {
+    grid-column: 1 / 3;
+    justify-self: center;
+  }
+  .footer-bottom {
+    grid-column: 1 / 3;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+  }
+  .footer-nav {
+    margin-bottom: 10px;
+  }
+  .footer-right {
+    text-align: center;
+    margin-top: 10px;
+  }
+  .footer-bottom {
+    margin-top: 15px;
+  }
+}

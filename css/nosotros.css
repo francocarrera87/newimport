@@ -191,6 +191,9 @@ nav ul {
 /* ===================================================
    Sección "Sobre Nosotros"
 =================================================== */
+
+  
+
 #sobre-nosotros {
 background-color: #171c2200;
   padding: 4rem 2rem;
@@ -247,10 +250,12 @@ background-color: #171c2200;
 @media (max-width: 768px) {
   #sobre-nosotros {
     padding: 3rem 1rem;
+    
   }
   
   #sobre-nosotros h2 {
     font-size: 2rem;
+    padding-top: 20%;
   }
   
   #sobre-nosotros p,
@@ -266,6 +271,7 @@ background-color: #171c2200;
   
   #sobre-nosotros h2 {
     font-size: 1.75rem;
+    padding-top: 40%;
   }
   
   #sobre-nosotros p,
